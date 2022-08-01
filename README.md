@@ -2,6 +2,40 @@
 
 This repo contains info on all the apps / tools / settings I use on my Mac.
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Homebrew / Terminal / Shell](#homebrew--terminal--shell)
+  - [Homebrew](#homebrew)
+  - [Terminal](#terminal)
+  - [Shell](#shell)
+    - [Install Bash and set it as the default](#install-bash-and-set-it-as-the-default)
+    - [Customizing Bash with `.bash_profile`](#customizing-bash-with-bash_profile)
+    - [Commands used by my .bash_profile](#commands-used-by-my-bash_profile)
+    - [Install the latest version of git](#install-the-latest-version-of-git)
+    - [Other command line tools I use](#other-command-line-tools-i-use)
+- [OS Productivity](#os-productivity)
+  - [Window Management](#window-management)
+  - [App Switching](#app-switching)
+  - [Quick Launching](#quick-launching)
+- [Other Apps I Use Daily](#other-apps-i-use-daily)
+- [OS Settings](#os-settings)
+  - [Finder](#finder)
+  - [Dock](#dock)
+- [Menu Bar Customization](#menu-bar-customization)
+  - [System Stats Widgets](#system-stats-widgets)
+  - [Menu Bar Calendar](#menu-bar-calendar)
+- [Note Taking](#note-taking)
+- [Web Browser](#web-browser)
+  - [Firefox](#firefox)
+- [Node.js](#nodejs)
+  - [Global Modules](#global-modules)
+- [VS Code](#vs-code)
+- [Break Timer](#break-timer)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Homebrew / Terminal / Shell
 
 ## Homebrew

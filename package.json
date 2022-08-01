@@ -1,0 +1,21 @@
+{
+  "name": "mac-setup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "toc": "doctoc README.md --github"
+  },
+  "keywords": [],
+  "author": "CJ R. <cj@null.computer> (https://w3cj.sh)",
+  "license": "MIT",
+  "dependencies": {
+    "doctoc": "^1.4.0",
+    "husky": "^4.2.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run toc && git add README.md"
+    }
+  }
+}
