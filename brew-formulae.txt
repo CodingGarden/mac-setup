@@ -3,7 +3,5 @@ vcprompt
 bash
 fortune
 cowsay
-heroku
 ffmpeg
-youtube-dl
 imagemagick

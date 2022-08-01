@@ -1,12 +1,317 @@
 # My Mac Setup
 
-This repo contains info on all the apps I use on my mac.
+This repo contains info on all the apps / tools / settings I use on my Mac.
 
-1. Homebrew/terminal/bash
-1. OSX Productivity - Window Management/Quick Launcher/Alt-Tab
-1. OSX Settings - Dock/Finder
-1. Web Browser - Extensions - AdBlock, Privacy Badger, OneTab
-1. Node.js - nvm
-1. Code Editor - vs code
-1. Code Editor Extensions
-1. Break timer
+# Homebrew / Terminal / Shell
+
+## Homebrew
+
+[Homebrew](https://brew.sh/) allows us to install tools and apps from the command line.
+
+Open up the built in `Terminal` app and run this command:
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+This will also install the xcode build tools which is needed by many other developer tools.
+
+After Homebrew is done installing, we will use it to install everything else we need.
+
+## Terminal
+
+The first app I install is to replace the built in `Terminal`.
+
+I prefer [iTerm2](https://iterm2.com/) because:
+* Nice window chrome
+* Lots of customization options
+* Clickable links
+* Native OS notifications
+
+There are a lot of options for a terminal replacement, but I've been using iTerm2 for years and it works great for my needs.
+
+Checkout their documentation for more info on what iterm2 can do: [https://iterm2.com/documentation.html](https://iterm2.com/documentation.html)
+
+We install this using a Homebrew "cask". Casks are full applications, similar to what you would install from the App store.
+
+```
+brew install iterm2
+```
+
+Once installed, launch it and customize the settings / preferences to your liking. These are my preferred settings:
+
+* Appearance -> Theme -> Minimal
+* Profiles -> Default -> General -> Working Directory -> Reuse previous session's directory
+* Profiles -> Default -> Colors -> Basic Colors -> Foreground -> Lime Green
+* Profiles -> Default -> Text -> Font -> Anonymous Pro
+  * You can download this font [here](https://www.marksimonson.com/fonts/view/anonymous-pro).
+  * I use this font in VS Code as well
+* Profiles -> Default -> Text -> Font Size -> 36
+  * I use my Macbook to present / teach, so a big font size is important so everyone can see the commands I'm typing
+* Profiles -> Default -> Keys -> Key Mappings -> Presets -> Natural Text Editing
+  * This allows me to use the [keyboard shortcuts](https://gist.github.com/w3cj/022081eda22081b82c52) I know and love inside of iTerm2
+
+## Shell
+
+Mac now comes with `zsh` as the default [shell](https://en.wikipedia.org/wiki/Comparison_of_command_shells). `bash` is my preferred shell.
+
+I prefer bash because every remote linux machine I log into uses bash. Also, most shell scripts you come across (`.sh` files) are meant to be run on `sh` (Bourne shell) or `bash` (Bourne again shell). These files _might_ run on `zsh`, but there might be some compatibility issues.
+
+If you are a beginner, you probably don't need to replace your shell with `bash`. If you're going to stick with `zsh`, checkout [Oh My Zsh](https://ohmyz.sh/) which gives you a bunch of customizations out of the box.
+
+### Install Bash and set it as the default
+
+To see what shell is currently your default, run:
+
+```sh
+echo $SHELL
+```
+
+To install the latest version of bash:
+
+```sh
+brew install bash
+```
+
+Then, determine where bash got installed:
+
+```sh
+which bash
+```
+
+This will likely print `/usr/local/bin/bash`.
+
+We now need to add this to our `/etc/shells` file so we can set it as our default shell.
+
+Open up the `/etc/shells` file in `nano` (a command line text editor) with super user privileges (you will need to type your password after running this command):
+
+```sh
+sudo nano /etc/shells
+```
+
+Command explained:
+
+* [`sudo`](https://en.wikipedia.org/wiki/Sudo) is a way of running a command with `super user` privileges.
+* [`nano`](https://en.wikipedia.org/wiki/GNU_nano) is an easy to use command line editor. As opposed to [`vi` or `vim`](https://en.wikipedia.org/wiki/Vim_(text_editor)).
+* `/etc/shells` is the file we need to edit / update.
+
+This will launch a command line editor. Add `/usr/local/bin/bash` to the file above the other list of shells.
+
+Press `CTRL+X` to close the file and then `Y` to confirm / save the changes.
+
+Now that `/usr/local/bin/bash` is in our `/etc/shells` file, we can set it as our default shell (you will need to enter your password for this command as well):
+
+```sh
+chsh -s /usr/local/bin/bash
+```
+
+Now that you've changed your shell, if you open up a new iTerm2 tab or close / re-open iTerm2, you should be presented with a `bash` shell!
+
+You can run the following to confirm you shell has changed:
+
+```sh
+echo $SHELL
+```
+
+### Customizing Bash with `.bash_profile`
+
+I have a custom `.bash_profile` with all of my custom settings including a customized prompt, aliases, PATH variables, colors and more.
+
+If you do not want to go through the process of customizing your `.bash_profile`, you can install [Oh My Bash](https://ohmybash.nntoan.com/) to get a ton of customizations out of the box.
+
+I store my `.bash_profile` on [github here](https://github.com/w3cj/dotfiles/blob/master/.bash_profile) so I can copy it over to any machine I'm setting up.
+
+Copy this file (or create your own) in your home directory:
+
+```sh
+cd ~
+nano .bash_profile
+```
+
+### Commands used by my .bash_profile
+
+* vcprompt - list the current branch if in a folder that is a git repo
+* [fortune](https://en.wikipedia.org/wiki/Fortune_(Unix)) - print a random quote / story / joke / poem.
+* [cowsay](https://en.wikipedia.org/wiki/Cowsay) - use a cowfile to say a random fortune
+
+```sh
+brew install vcprompt
+brew install fortune
+brew install cowsay
+```
+
+### Install the latest version of git
+
+My Mac came with `git` version `2.32.1`, we can use brew to install the latest version of `git`:
+
+```sh
+git --version
+brew install git
+```
+
+Open a new tab / window to start using the latest version:
+
+```sh
+git --version
+```
+
+### Other command line tools I use
+
+* [ffmpeg](https://en.wikipedia.org/wiki/FFmpeg) - edit videos from the command line
+* [imagemagick](https://en.wikipedia.org/wiki/ImageMagick) - edit images from the command line
+
+```sh
+brew install ffmpeg
+brew install imagemagick
+```
+
+# OS Productivity
+
+### Window Management
+
+I know this feature is built in to a lot of other operating systems, but it is not built in to a Mac, so we need an app for it.
+
+I use [rectangle](https://rectangleapp.com/) to move and resize windows using keyboard shortcuts. I used to use [spectacle](https://www.spectacleapp.com/), but rectangle is more regularly maintained and allows me to use all of the same keyboard shortcuts as spectacle.
+
+I highly recommend installing this and memorizing the keyboard shortcuts. Fluid and seamless window management is key to being productive while coding.
+
+```sh
+brew install rectangle
+```
+
+### App Switching
+
+The built in App switcher only shows application icons, and only shows 1 icon per app regardless of how many windows you have open in that app.
+
+I use an app switcher called [AltTab](https://alt-tab-macos.netlify.app/). It shows full window previews, and has an option to show a preview for every open window in all applications (even minimized ones).
+
+I replace the built-in `CMD+TAB` shortcut with AltTab.
+
+```sh
+brew install alt-tab
+```
+
+### Quick Launching
+
+The built in spotlight search is a bit slow for me and usually has web search results as the default instead of apps or folders on my machine.
+
+I use [Alfred](https://www.alfredapp.com/) to launch apps / folders. There are features locked behind the paid powerpack, but I purchased a lifetime license a few years ago, and Alfred keeps working great for me. There are a lot of other cool things you can do with Alfred (workflows, scripting, clipboard manager etc.), but I mainly use it for launching apps and folders.
+
+```sh
+brew install alfred
+```
+
+# Other Apps I Use Daily
+
+* [firefox-developer-edition] - Preferred web browser
+* [app-cleaner](https://freemacsoft.net/appcleaner/) - When removing an app, will search your file system for related files / settings that should be removed as well
+* android-file-transfer - Transfer files to / from my android phone
+* android-platform-tools - Installs `adb` without the need for the full android studio.
+* [keepingyouawake](https://keepingyouawake.app/) - Prevents my Mac from going to sleep when I'm presenting / live streaming
+* [discord](https://discord.com/) - Messaging / Community
+* [vlc](https://www.videolan.org/) - I use VLC to watch videos instead of the built in QuickTime.
+* [keka](https://www.keka.io/en/) - Can extract 7z / rar and other types of archives
+* [kap](https://getkap.co/) - Screen recorder / gif maker
+* [time-out](https://www.dejal.com/timeout/) - Break timer
+* [gimp](https://www.gimp.org/) - Image editor
+* [inkscape](https://inkscape.org/) - Vector editor
+* [visual-studio-code](https://code.visualstudio.com/) - Code Editor
+* [sublime-text](https://www.sublimetext.com/) - Note taking (I know there are better apps...)
+* [insomnia](https://insomnia.rest/products/insomnia) - HTTP / REST / GraphQL tester / requester
+
+You can install them in one go by placing them all into a text file and then running brew install:
+
+```
+firefox-developer-edition
+app-cleaner
+android-file-transfer
+android-platform-tools
+keepingyouawake
+discord
+slack
+vlc
+keka
+kap
+time-out
+gimp
+inkscape
+visual-studio-code
+sublime-text
+insomnia
+```
+
+```sh
+xargs brew install < apps.txt
+```
+
+# OS Settings
+
+These are my preferred settings for `Finder` and the `Dock`.
+
+### Finder
+
+* Finder -> Preferences
+  * General -> Show these on the desktop -> Select None
+    * I try to keep my desktop completely clean.
+  * General -> New Finder windows show -> Home Folder
+    * I prefer to see my home folder in each new finder window instead of recent documents
+  * Advanced -> Show all filename extensions -> Yes
+  * Advanced -> Show warning before changing an extension -> No
+  * Advanced -> When performing a search -> Search the current folder
+* View
+  * Show Status Bar
+  * Show Path Bar
+  * Show Tab Bar
+
+### Dock
+
+I don't use the Dock at all. It takes up screen space, and I can use Alfred to launch apps and AltTab to switch between apps. I make the dock as small as possible and auto hide it.
+
+* System Preferences
+  * Dock & Menu Bar
+    * Size -> Small as possible
+    * Position on screen -> Right
+    * Automatically hide and show the Dock -> Yes
+
+# Menu Bar Customization
+
+### System Stats Widgets
+
+I like to see my network traffic, CPU temp / usage and RAM usage at a glance.
+
+I used to use iStat Menus, but a few people in my twitch chat pointed me to [stats](https://github.com/exelban/stats), a FOSS menu bar stats app. I tried it out, and I like it so far.
+
+In each widget, a key setting to look for is under "widget settings", choose "merge widgets into one".
+
+```sh
+brew install stats
+```
+
+### Menu Bar Calendar
+
+I like to have a calendar in the menu bar that I can quickly look at. stats does not include one, so I found [itsycal](https://www.mowglii.com/itsycal/) it seems fine for my needs.
+
+```sh
+brew install itsycal
+```
+
+itsycal shows the date, so I hide the date in the system menu bar widget:
+
+* System Preferences
+  * Dock & Menu Bar
+    * Clock
+      * Show Date -> Never
+      * Show Day of Week -> No
+
+# Note Taking
+
+There are likely a million other better options, but I have used Sublime Text as a note taking app for years now. I essentially use it as a staging area before moving my notes into a more permanent place (Google Docs, Google Keep, Trello, actual code project READMES etc.) or I delete the note (close the tab) after it has served its purpose.
+
+I use sublime because it allows me to open new tabs / files without the need to save a given file. I can have several tabs / staging areas open and then completely close sublime. When I open it back up, all of my tabs are still there.
+
+# Firefox
+
+I use Firefox because it is open source and comes from the [Mozilla Foundation](https://www.mozilla.org/en-US/about/manifesto/) a non profit company that [respects my privacy](https://www.mozilla.org/en-US/firefox/privacy/)
+
+
+# TODO: finish this README
