@@ -6,6 +6,7 @@ This repo contains info on all the apps / tools / settings I use on my Mac.
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
+- [What Macbook do I have?](#what-macbook-do-i-have)
 - [Homebrew / Terminal / Shell](#homebrew--terminal--shell)
   - [Homebrew](#homebrew)
   - [Terminal](#terminal)
@@ -36,13 +37,28 @@ This repo contains info on all the apps / tools / settings I use on my Mac.
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+## What Macbook do I have?
+
+I am still using the 2015 Macbook Pro (yes still in 2022). This 7 year old laptop still runs great for all of my needs (development, music production, video editing and image editing).
+
+These are the specs at a glance:
+
+* Intel "Core i7" Quad Core 2.5 GHz
+* 16GB RAM
+* 500GB SSD
+* AMD Radeon R9 M370X 2GB GPU
+
+You can read more about it [here](https://everymac.com/systems/apple/macbook_pro/specs/macbook-pro-core-i7-2.5-15-dual-graphics-mid-2015-retina-display-specs.html)
+
+The apps and settings I use will work on the latest M1 and M2 MacBooks as well.
+
 ## Homebrew / Terminal / Shell
 
 ### Homebrew
 
 [Homebrew](https://brew.sh/) allows us to install tools and apps from the command line.
 
-Open up the built in `Terminal` app and run this command:
+To install it, open up the built in `Terminal` app and run this command:
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -79,15 +95,15 @@ Once installed, launch it and customize the settings / preferences to your likin
     * Minimal
 * Profiles
   * Default
-    * General -> Working Directory -> Reuse previous session's directory
-    * Colors -> Basic Colors -> Foreground -> Lime Green
-    * Text -> Font -> Anonymous Pro
-      * You can download this font [here](https://www.marksimonson.com/fonts/view/anonymous-pro).
-      * I use this font in VS Code as well
-    * Text -> Font Size -> 36
-      * I use my Macbook to present / teach, so a big font size is important so everyone can see the commands I'm typing
-    * Keys -> Key Mappings -> Presets -> Natural Text Editing
-      * This allows me to use the [keyboard shortcuts](https://gist.github.com/w3cj/022081eda22081b82c52) I know and love inside of iTerm2
+      * General -> Working Directory -> Reuse previous session's directory
+      * Colors -> Basic Colors -> Foreground -> Lime Green
+      * Text -> Font -> Anonymous Pro
+        * You can download this font [here](https://www.marksimonson.com/fonts/view/anonymous-pro).
+        * I use this font in VS Code as well
+      * Text -> Font Size -> 36
+        * I use my Macbook to present / teach, so a big font size is important so everyone can see the commands I'm typing
+      * Keys -> Key Mappings -> Presets -> Natural Text Editing
+        * This allows me to use the [keyboard shortcuts](https://gist.github.com/w3cj/022081eda22081b82c52) I know and love inside of iTerm2
 
 ### Shell
 
@@ -300,9 +316,9 @@ These are my preferred settings for `Finder` and the `Dock`.
 
 * Finder -> Preferences
   * General -> Show these on the desktop -> Select None
-    * I try to keep my desktop completely clean.
+      * I try to keep my desktop completely clean.
   * General -> New Finder windows show -> Home Folder
-    * I prefer to see my home folder in each new finder window instead of recent documents
+      * I prefer to see my home folder in each new finder window instead of recent documents
   * Advanced -> Show all filename extensions -> Yes
   * Advanced -> Show warning before changing an extension -> No
   * Advanced -> When performing a search -> Search the current folder
@@ -317,9 +333,9 @@ I don't use the Dock at all. It takes up screen space, and I can use Alfred to l
 
 * System Preferences
   * Dock & Menu Bar
-    * Size -> Small as possible
-    * Position on screen -> Right
-    * Automatically hide and show the Dock -> Yes
+      * Size -> Small as possible
+      * Position on screen -> Right
+      * Automatically hide and show the Dock -> Yes
 
 ## Menu Bar Customization
 
@@ -327,7 +343,7 @@ I don't use the Dock at all. It takes up screen space, and I can use Alfred to l
 
 I like to see my network traffic, CPU temp / usage and RAM usage at a glance.
 
-I used to use iStat Menus, but a few people in my twitch chat pointed me to [stats](https://github.com/exelban/stats), a FOSS menu bar stats app. I tried it out, and I like it so far.
+I used to use [iStat Menus](https://bjango.com/mac/istatmenus/), but a few people in my twitch chat pointed me to [stats](https://github.com/exelban/stats), a FOSS menu bar stats app. I tried it out, and I like it so far.
 
 In each widget, a key setting to look for is under "widget settings", choose "merge widgets into one".
 
@@ -337,7 +353,7 @@ brew install stats
 
 ### Menu Bar Calendar
 
-I like to have a calendar in the menu bar that I can quickly look at. stats does not include one, so I found [itsycal](https://www.mowglii.com/itsycal/) it seems fine for my needs.
+I like to have a calendar in the menu bar that I can quickly look at. stats does not include one, so I found [itsycal](https://www.mowglii.com/itsycal/). It seems fine for my needs.
 
 ```sh
 brew install itsycal
@@ -347,13 +363,13 @@ itsycal shows the date, so I hide the date in the system menu bar widget:
 
 * System Preferences
   * Dock & Menu Bar
-    * Clock
-      * Show Date -> Never
-      * Show Day of Week -> No
+      * Clock
+          * Show Date -> Never
+          * Show Day of Week -> No
 
 ## Note Taking
 
-There are likely a million other better options, but I have used Sublime Text as a note taking app for years now. I essentially use it as a staging area before moving my notes into a more permanent place (Google Docs, Google Keep, Trello, actual code project READMES etc.) or I delete the note (close the tab) after it has served its purpose.
+There are likely a million other better options, but I have used [Sublime Text](https://www.sublimetext.com/) as a note taking app for years now. I essentially use it as a staging area before moving my notes into a more permanent place (Google Docs, Google Keep, Trello, actual code project READMES etc.) or I delete the note (close the tab) after it has served its purpose.
 
 I use sublime because it allows me to open new tabs / files without the need to save a given file. I can have several tabs / staging areas open and then completely close sublime. When I open it back up, all of my tabs are still there.
 
@@ -441,8 +457,8 @@ You can view all of my VS Code settings / extensions [here](https://github.com/C
 I use an app called [Time Out](https://www.dejal.com/timeout/).
 
 I have it setup to show:
-  * 10 second micro break every 15 minutes
-  * 5 minute long break every 60 minutes
+* 10 second micro break every 15 minutes
+* 5 minute long break every 60 minutes
 
 There is also a cross platform break timer call [Stretchly](https://hovancik.net/stretchly/). I have not used it but a lot of people have recommended it.
 
