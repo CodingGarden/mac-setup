@@ -73,14 +73,16 @@ After Homebrew is done installing, we will use it to install everything else we 
 The first app I install is to replace the built in `Terminal`.
 
 I prefer [iTerm2](https://iterm2.com/) because:
-* Nice window chrome
+* Nice [window chrome](https://en.wiktionary.org/wiki/chrome#Noun)
 * Lots of customization options
 * Clickable links
 * Native OS notifications
 
+>Quick aside - "window chrome" is another term for the basic structural elements used in a graphical user interface, such as window frames and scroll bars, as opposed to the content. After having a few people review this, I realize not everyone knows / uses that term 😅
+
 There are a lot of options for a terminal replacement, but I've been using iTerm2 for years and it works great for my needs.
 
-Checkout their documentation for more info on what iterm2 can do: [https://iterm2.com/documentation.html](https://iterm2.com/documentation.html)
+Checkout their documentation for more info on what iTerm2 can do: [https://iterm2.com/documentation.html](https://iterm2.com/documentation.html)
 
 We install this using a Homebrew "cask". Casks are full applications, similar to what you would install from the App store.
 
@@ -377,7 +379,7 @@ I use sublime because it allows me to open new tabs / files without the need to 
 
 ### Firefox
 
-I use Firefox because it is open source and comes from the [Mozilla Foundation](https://www.mozilla.org/en-US/about/manifesto/) a non profit company that [respects my privacy](https://www.mozilla.org/en-US/firefox/privacy/)
+I use Firefox because it is open source and comes from the [Mozilla Foundation](https://www.mozilla.org/en-US/about/manifesto/), a non profit company that [respects my privacy](https://www.mozilla.org/en-US/firefox/privacy/).
 
 I use the following extensions to protect my privacy while browsing the web:
 
