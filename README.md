@@ -1,4 +1,4 @@
-# My Mac Setup
+## My Mac Setup
 
 This repo contains info on all the apps / tools / settings I use on my Mac.
 
@@ -36,9 +36,9 @@ This repo contains info on all the apps / tools / settings I use on my Mac.
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Homebrew / Terminal / Shell
+## Homebrew / Terminal / Shell
 
-## Homebrew
+### Homebrew
 
 [Homebrew](https://brew.sh/) allows us to install tools and apps from the command line.
 
@@ -52,7 +52,7 @@ This will also install the xcode build tools which is needed by many other devel
 
 After Homebrew is done installing, we will use it to install everything else we need.
 
-## Terminal
+### Terminal
 
 The first app I install is to replace the built in `Terminal`.
 
@@ -74,18 +74,22 @@ brew install iterm2
 
 Once installed, launch it and customize the settings / preferences to your liking. These are my preferred settings:
 
-* Appearance -> Theme -> Minimal
-* Profiles -> Default -> General -> Working Directory -> Reuse previous session's directory
-* Profiles -> Default -> Colors -> Basic Colors -> Foreground -> Lime Green
-* Profiles -> Default -> Text -> Font -> Anonymous Pro
-  * You can download this font [here](https://www.marksimonson.com/fonts/view/anonymous-pro).
-  * I use this font in VS Code as well
-* Profiles -> Default -> Text -> Font Size -> 36
-  * I use my Macbook to present / teach, so a big font size is important so everyone can see the commands I'm typing
-* Profiles -> Default -> Keys -> Key Mappings -> Presets -> Natural Text Editing
-  * This allows me to use the [keyboard shortcuts](https://gist.github.com/w3cj/022081eda22081b82c52) I know and love inside of iTerm2
+* Appearance
+  * Theme
+    * Minimal
+* Profiles
+  * Default
+    * General -> Working Directory -> Reuse previous session's directory
+    * Colors -> Basic Colors -> Foreground -> Lime Green
+    * Text -> Font -> Anonymous Pro
+      * You can download this font [here](https://www.marksimonson.com/fonts/view/anonymous-pro).
+      * I use this font in VS Code as well
+    * Text -> Font Size -> 36
+      * I use my Macbook to present / teach, so a big font size is important so everyone can see the commands I'm typing
+    * Keys -> Key Mappings -> Presets -> Natural Text Editing
+      * This allows me to use the [keyboard shortcuts](https://gist.github.com/w3cj/022081eda22081b82c52) I know and love inside of iTerm2
 
-## Shell
+### Shell
 
 Mac now comes with `zsh` as the default [shell](https://en.wikipedia.org/wiki/Comparison_of_command_shells). `bash` is my preferred shell.
 
@@ -93,7 +97,7 @@ I prefer bash because every remote linux machine I log into uses bash. Also, mos
 
 If you are a beginner, you probably don't need to replace your shell with `bash`. If you're going to stick with `zsh`, checkout [Oh My Zsh](https://ohmyz.sh/) which gives you a bunch of customizations out of the box.
 
-### Install Bash and set it as the default
+#### Install Bash and set it as the default
 
 To see what shell is currently your default, run:
 
@@ -147,7 +151,7 @@ You can run the following to confirm you shell has changed:
 echo $SHELL
 ```
 
-### Customizing Bash with `.bash_profile`
+#### Customizing Bash with `.bash_profile`
 
 I have a custom `.bash_profile` with all of my custom settings including a customized prompt, aliases, PATH variables, colors and more.
 
@@ -162,7 +166,7 @@ cd ~
 curl -O https://raw.githubusercontent.com/w3cj/dotfiles/master/.bash_profile
 ```
 
-### Commands used by my .bash_profile
+#### Commands used by my .bash_profile
 
 * vcprompt - list the current branch if in a folder that is a git repo
 * [fortune](https://en.wikipedia.org/wiki/Fortune_(Unix)) - print a random quote / story / joke / poem.
@@ -174,7 +178,7 @@ brew install fortune
 brew install cowsay
 ```
 
-### Install the latest version of git
+#### Install the latest version of git
 
 My Mac came with `git` version `2.32.1`, we can use brew to install the latest version of `git`:
 
@@ -199,7 +203,7 @@ git config --global user.email cj@null.computer
 git config --global core.editor nano
 ```
 
-### Other command line tools I use
+#### Other command line tools I use
 
 * [ffmpeg](https://en.wikipedia.org/wiki/FFmpeg) - edit videos from the command line
 * [imagemagick](https://en.wikipedia.org/wiki/ImageMagick) - edit images from the command line
@@ -209,9 +213,9 @@ brew install ffmpeg
 brew install imagemagick
 ```
 
-# OS Productivity
+## OS Productivity
 
-## Window Management
+### Window Management
 
 I know this feature is built in to a lot of other operating systems, but it is not built in to a Mac, so we need an app for it.
 
@@ -223,7 +227,7 @@ I highly recommend installing this and memorizing the keyboard shortcuts. Fluid 
 brew install rectangle
 ```
 
-## App Switching
+### App Switching
 
 The built in App switcher only shows application icons, and only shows 1 icon per app regardless of how many windows you have open in that app.
 
@@ -235,7 +239,7 @@ I replace the built-in `CMD+TAB` shortcut with AltTab.
 brew install alt-tab
 ```
 
-## Quick Launching
+### Quick Launching
 
 The built in spotlight search is a bit slow for me and usually has web search results as the default instead of apps or folders on my machine.
 
@@ -245,7 +249,7 @@ I use [Alfred](https://www.alfredapp.com/) to launch apps / folders. There are f
 brew install alfred
 ```
 
-# Other Apps I Use Daily
+## Other Apps I Use Daily
 
 * [firefox-developer-edition](https://www.mozilla.org/en-US/firefox/developer/) - Preferred web browser
 * [app-cleaner](https://freemacsoft.net/appcleaner/) - When removing an app, will search your file system for related files / settings that should be removed as well
@@ -288,11 +292,11 @@ insomnia
 xargs brew install < apps.txt
 ```
 
-# OS Settings
+## OS Settings
 
 These are my preferred settings for `Finder` and the `Dock`.
 
-## Finder
+### Finder
 
 * Finder -> Preferences
   * General -> Show these on the desktop -> Select None
@@ -307,7 +311,7 @@ These are my preferred settings for `Finder` and the `Dock`.
   * Show Path Bar
   * Show Tab Bar
 
-## Dock
+### Dock
 
 I don't use the Dock at all. It takes up screen space, and I can use Alfred to launch apps and AltTab to switch between apps. I make the dock as small as possible and auto hide it.
 
@@ -317,9 +321,9 @@ I don't use the Dock at all. It takes up screen space, and I can use Alfred to l
     * Position on screen -> Right
     * Automatically hide and show the Dock -> Yes
 
-# Menu Bar Customization
+## Menu Bar Customization
 
-## System Stats Widgets
+### System Stats Widgets
 
 I like to see my network traffic, CPU temp / usage and RAM usage at a glance.
 
@@ -331,7 +335,7 @@ In each widget, a key setting to look for is under "widget settings", choose "me
 brew install stats
 ```
 
-## Menu Bar Calendar
+### Menu Bar Calendar
 
 I like to have a calendar in the menu bar that I can quickly look at. stats does not include one, so I found [itsycal](https://www.mowglii.com/itsycal/) it seems fine for my needs.
 
@@ -347,15 +351,15 @@ itsycal shows the date, so I hide the date in the system menu bar widget:
       * Show Date -> Never
       * Show Day of Week -> No
 
-# Note Taking
+## Note Taking
 
 There are likely a million other better options, but I have used Sublime Text as a note taking app for years now. I essentially use it as a staging area before moving my notes into a more permanent place (Google Docs, Google Keep, Trello, actual code project READMES etc.) or I delete the note (close the tab) after it has served its purpose.
 
 I use sublime because it allows me to open new tabs / files without the need to save a given file. I can have several tabs / staging areas open and then completely close sublime. When I open it back up, all of my tabs are still there.
 
-# Web Browser
+## Web Browser
 
-## Firefox
+### Firefox
 
 I use Firefox because it is open source and comes from the [Mozilla Foundation](https://www.mozilla.org/en-US/about/manifesto/) a non profit company that [respects my privacy](https://www.mozilla.org/en-US/firefox/privacy/)
 
@@ -370,7 +374,7 @@ I use the following extensions to protect my privacy while browsing the web:
   * Caches CDN links locally and intercepts requests to serve from the cache. Prevents CDNs from tracking you across websites.
 
 
-# Node.js
+## Node.js
 
 I use nvm to manage the installed versions of Node.js on my machine. This allows me to easily switch between Node.js versions depending on the project I'm working in.
 
@@ -386,7 +390,7 @@ After installation you'll want to add the following to your .bash_profile / .zsh
 
 ```sh
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" ## This loads nvm
 ```
 
 Now that nvm is installed, you can install a specific version of node.js and use it:
@@ -397,7 +401,7 @@ nvm use 18
 node --version
 ```
 
-## Global Modules
+### Global Modules
 
 There are a few global node modules I use a lot:
 
@@ -412,7 +416,7 @@ There are a few global node modules I use a lot:
 npm install -g lite-server license gitignore
 ```
 
-# VS Code
+## VS Code
 
 VS Code is my preferred code editor.
 
@@ -432,7 +436,7 @@ You can view all of my VS Code settings / extensions [here](https://github.com/C
 * editor.snippetSuggestions
   * Puts the most relevant auto complete options at the top
 
-# Break Timer
+## Break Timer
 
 I use an app called [Time Out](https://www.dejal.com/timeout/).
 
