@@ -98,12 +98,12 @@ Once installed, launch it and customize the settings / preferences to your likin
       * General -> Working Directory -> Reuse previous session's directory
       * Colors -> Basic Colors -> Foreground -> Lime Green
       * Text -> Font -> Anonymous Pro
-        * You can download this font [here](https://www.marksimonson.com/fonts/view/anonymous-pro).
-        * I use this font in VS Code as well
+          * You can download this font [here](https://www.marksimonson.com/fonts/view/anonymous-pro).
+          * I use this font in VS Code as well
       * Text -> Font Size -> 36
-        * I use my Macbook to present / teach, so a big font size is important so everyone can see the commands I'm typing
+          * I use my Macbook to present / teach, so a big font size is important so everyone can see the commands I'm typing
       * Keys -> Key Mappings -> Presets -> Natural Text Editing
-        * This allows me to use the [keyboard shortcuts](https://gist.github.com/w3cj/022081eda22081b82c52) I know and love inside of iTerm2
+          * This allows me to use the [keyboard shortcuts](https://gist.github.com/w3cj/022081eda22081b82c52) I know and love inside of iTerm2
 
 ### Shell
 
