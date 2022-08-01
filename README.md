@@ -125,7 +125,7 @@ Copy this file (or create your own) in your home directory:
 
 ```sh
 cd ~
-nano .bash_profile
+curl -O https://raw.githubusercontent.com/w3cj/dotfiles/master/.bash_profile
 ```
 
 ### Commands used by my .bash_profile
@@ -155,6 +155,16 @@ Open a new tab / window to start using the latest version:
 git --version
 ```
 
+Configure git with your name / email and preferred editor:
+
+```sh
+git config --global user.name w3cj
+
+git config --global user.email cj@null.computer
+
+git config --global core.editor nano
+```
+
 ### Other command line tools I use
 
 * [ffmpeg](https://en.wikipedia.org/wiki/FFmpeg) - edit videos from the command line
@@ -167,7 +177,7 @@ brew install imagemagick
 
 # OS Productivity
 
-### Window Management
+## Window Management
 
 I know this feature is built in to a lot of other operating systems, but it is not built in to a Mac, so we need an app for it.
 
@@ -179,7 +189,7 @@ I highly recommend installing this and memorizing the keyboard shortcuts. Fluid 
 brew install rectangle
 ```
 
-### App Switching
+## App Switching
 
 The built in App switcher only shows application icons, and only shows 1 icon per app regardless of how many windows you have open in that app.
 
@@ -191,7 +201,7 @@ I replace the built-in `CMD+TAB` shortcut with AltTab.
 brew install alt-tab
 ```
 
-### Quick Launching
+## Quick Launching
 
 The built in spotlight search is a bit slow for me and usually has web search results as the default instead of apps or folders on my machine.
 
@@ -203,7 +213,7 @@ brew install alfred
 
 # Other Apps I Use Daily
 
-* [firefox-developer-edition] - Preferred web browser
+* [firefox-developer-edition](https://www.mozilla.org/en-US/firefox/developer/) - Preferred web browser
 * [app-cleaner](https://freemacsoft.net/appcleaner/) - When removing an app, will search your file system for related files / settings that should be removed as well
 * android-file-transfer - Transfer files to / from my android phone
 * android-platform-tools - Installs `adb` without the need for the full android studio.
@@ -248,7 +258,7 @@ xargs brew install < apps.txt
 
 These are my preferred settings for `Finder` and the `Dock`.
 
-### Finder
+## Finder
 
 * Finder -> Preferences
   * General -> Show these on the desktop -> Select None
@@ -263,7 +273,7 @@ These are my preferred settings for `Finder` and the `Dock`.
   * Show Path Bar
   * Show Tab Bar
 
-### Dock
+## Dock
 
 I don't use the Dock at all. It takes up screen space, and I can use Alfred to launch apps and AltTab to switch between apps. I make the dock as small as possible and auto hide it.
 
@@ -275,7 +285,7 @@ I don't use the Dock at all. It takes up screen space, and I can use Alfred to l
 
 # Menu Bar Customization
 
-### System Stats Widgets
+## System Stats Widgets
 
 I like to see my network traffic, CPU temp / usage and RAM usage at a glance.
 
@@ -287,7 +297,7 @@ In each widget, a key setting to look for is under "widget settings", choose "me
 brew install stats
 ```
 
-### Menu Bar Calendar
+## Menu Bar Calendar
 
 I like to have a calendar in the menu bar that I can quickly look at. stats does not include one, so I found [itsycal](https://www.mowglii.com/itsycal/) it seems fine for my needs.
 
@@ -309,9 +319,92 @@ There are likely a million other better options, but I have used Sublime Text as
 
 I use sublime because it allows me to open new tabs / files without the need to save a given file. I can have several tabs / staging areas open and then completely close sublime. When I open it back up, all of my tabs are still there.
 
-# Firefox
+# Web Browser
+
+## Firefox
 
 I use Firefox because it is open source and comes from the [Mozilla Foundation](https://www.mozilla.org/en-US/about/manifesto/) a non profit company that [respects my privacy](https://www.mozilla.org/en-US/firefox/privacy/)
 
+I use the following extensions to protect my privacy while browsing the web:
 
-# TODO: finish this README
+* Adblocker - [uBlock Origin](https://github.com/gorhill/uBlock)
+* Tracker Blocker - [Privacy Badger](https://privacybadger.org/)
+  * Firefox now includes tracker blocking, but I leave Privacy Badger enabled.
+* [Cookie Autodelete](https://github.com/Cookie-AutoDelete/Cookie-AutoDelete)
+  * Removes cookies from websites that are not in my whitelist whenever a tab is closed. An additional precaution to tracker blocking.
+* [Decentraleyes](https://decentraleyes.org/)
+  * Caches CDN links locally and intercepts requests to serve from the cache. Prevents CDNs from tracking you across websites.
+
+
+# Node.js
+
+I use nvm to manage the installed versions of Node.js on my machine. This allows me to easily switch between Node.js versions depending on the project I'm working in.
+
+See installation instructions [here](https://github.com/nvm-sh/nvm#installing-and-updating).
+
+OR run this command (make sure v0.39.1 is still the latest)
+
+```sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+```
+
+After installation you'll want to add the following to your .bash_profile / .zshrc etc.
+
+```sh
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+```
+
+Now that nvm is installed, you can install a specific version of node.js and use it:
+
+```sh
+nvm install 18
+nvm use 18
+node --version
+```
+
+## Global Modules
+
+There are a few global node modules I use a lot:
+
+* lite-server
+  * Auto refreshing static file server. Great for working on static apps with no build tools.
+* license
+  * Auto generate open source license files
+* gitignore
+  * Auto generate `.gitignore` files base on the current project type
+
+```
+npm install -g lite-server license gitignore
+```
+
+# VS Code
+
+VS Code is my preferred code editor.
+
+You can view all of my VS Code settings / extensions [here](https://github.com/CodingGarden/vscode-settings).
+
+2 of the most notable settings are:
+
+```json
+{
+  "editor.linkedEditing": true,
+  "editor.snippetSuggestions": "top",
+}
+```
+
+* editor.linkedEditing
+  * Automatically edit a closing tag when editing an opening tag
+* editor.snippetSuggestions
+  * Puts the most relevant auto complete options at the top
+
+# Break Timer
+
+I use an app called [Time Out](https://www.dejal.com/timeout/).
+
+I have it setup to show:
+  * 10 second micro break every 15 minutes
+  * 5 minute long break every 60 minutes
+
+There is also a cross platform break timer call [Stretchly](https://hovancik.net/stretchly/). I have not used it but a lot of people have recommended it.
+
