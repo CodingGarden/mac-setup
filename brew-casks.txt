@@ -3,7 +3,7 @@ alfred
 rectangle
 alt-tab
 firefox-developer-edition
-app-cleaner
+appcleaner
 android-file-transfer
 android-platform-tools
 keepingyouawake

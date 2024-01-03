@@ -268,7 +268,7 @@ brew install alfred
 ## Other Apps I Use Daily
 
 * [firefox-developer-edition](https://www.mozilla.org/en-US/firefox/developer/) - Preferred web browser
-* [app-cleaner](https://freemacsoft.net/appcleaner/) - When removing an app, will search your file system for related files / settings that should be removed as well
+* [appcleaner](https://freemacsoft.net/appcleaner/) - When removing an app, will search your file system for related files / settings that should be removed as well
 * android-file-transfer - Transfer files to / from my android phone
 * android-platform-tools - Installs `adb` without the need for the full android studio.
 * [keepingyouawake](https://keepingyouawake.app/) - Prevents my Mac from going to sleep when I'm presenting / live streaming
@@ -287,7 +287,7 @@ You can install them in one go by placing them all into a text file and then run
 
 ```
 firefox-developer-edition
-app-cleaner
+appcleaner
 android-file-transfer
 android-platform-tools
 keepingyouawake
