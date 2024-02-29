@@ -1,7 +1,5 @@
-git
-vcprompt
-bash
-fortune
-cowsay
 ffmpeg
 imagemagick
+wget
+telnet
+tldr

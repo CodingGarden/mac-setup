@@ -1,9 +1,7 @@
 iterm2
-alfred
+raycast
 rectangle
 alt-tab
-firefox-developer-edition
-appcleaner
 android-file-transfer
 android-platform-tools
 keepingyouawake
@@ -13,8 +11,6 @@ vlc
 keka
 kap
 time-out
-gimp
-inkscape
+figma
 visual-studio-code
 sublime-text
-insomnia
