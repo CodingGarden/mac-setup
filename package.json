@@ -6,16 +6,16 @@
   "scripts": {
     "toc": "doctoc README.md --github"
   },
-  "keywords": [],
+  const fs = require('fs');
+    "keywords": [],
   "author": "CJ R. <cj@null.computer> (https://w3cj.sh)",
   "license": "MIT",
   "dependencies": {
-    "doctoc": "^1.4.0",
+    "fs": "^0.0.1",
+    "underscore": "^1.13.1"
+  },
+    "doctoc": "^2.2.0",
     "husky": "^4.2.5"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run toc && git add README.md"
-    }
-  }
-}
+  "doctoc": "^2.2.0",
+  "underscore": "^1.13.1"
